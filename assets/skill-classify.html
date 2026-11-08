@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Skill 分类目录</title>
+<style>
+:root{color-scheme:light;--canvas:#edf1f5;--paper:#fcfdff;--ink:#172e43;--muted:#516578;--rule:#dce4ec;--brand:#215a68;--brand-pale:#e3f1f1;--mark:#8c421f;--mark-pale:#f9ede3;--hover:#f2f6fa;--mono:"Cascadia Mono",Consolas,monospace;--body:"Segoe UI","Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.55 var(--body)}[hidden]{display:none!important}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--brand);outline-offset:3px}a{color:var(--brand)}a:hover{text-decoration:none}.top{border-bottom:1px solid var(--rule);background:var(--paper)}.top-inner{width:min(1320px,100% - 64px);margin:auto;min-height:55px;display:flex;align-items:center;justify-content:space-between;gap:14px}.wordmark,.local,.kicker,.index-no,.count,.table-code,.updated{font-family:var(--mono)}.wordmark{font-size:12px;font-weight:700;letter-spacing:.12em}.wordmark .token{margin-right:.6rem;color:var(--brand);font-size:16px}.local{color:var(--brand);font-size:11px;letter-spacing:.05em;white-space:nowrap}.layout{width:min(1320px,100% - 64px);margin:0 auto 50px}.intro{padding:37px 0 23px;border-bottom:1px solid var(--rule);display:flex;align-items:end;justify-content:space-between;gap:18px}.kicker{font-size:11px;color:var(--mark);letter-spacing:.14em;margin:0 0 8px}.intro h1{font-size:clamp(34px,5.2vw,53px);letter-spacing:-.055em;line-height:1.05;margin:0}.intro p:not(.kicker){margin:11px 0 0;color:var(--muted)}.updated{font-size:12px;color:var(--muted);white-space:nowrap;text-align:right}.workspace{display:grid;grid-template-columns:205px minmax(0,1fr);align-items:start;gap:24px;padding-top:20px}.rail{position:sticky;top:14px}.rail h2{font-size:13px;margin:0 0 8px;padding:5px 8px}.rail ol{list-style:none;margin:0;padding:0}.rail button{display:grid;grid-template-columns:1.8em minmax(0,1fr);align-items:center;gap:7px;width:100%;border:0;border-radius:5px;background:transparent;color:var(--muted);padding:5px 8px;text-align:left;font-size:13px;min-height:33px}.rail button:hover,.rail button[aria-current="true"]{background:var(--brand-pale);color:var(--brand)}.index-no{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:600}.catalog-panel{min-width:0}.searchbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:center}.input-wrap{position:relative}.input-wrap svg{position:absolute;width:17px;height:17px;top:13px;left:13px;color:var(--muted);pointer-events:none}.searchbar input{width:100%;height:44px;padding:0 12px 0 39px;background:var(--paper);border:1px solid #c7d4e0;border-radius:6px;color:var(--ink)}.searchbar input::placeholder{color:var(--muted);opacity:1}.control{min-height:44px;padding:0 12px;background:var(--paper);border:1px solid var(--rule);border-radius:6px;color:var(--brand);white-space:nowrap}.control:hover{background:var(--brand-pale)}.status{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0 10px;color:var(--muted);font-size:12px;min-height:19px}.text-action{color:var(--brand);background:transparent;border:0;padding:0;font-size:inherit;text-decoration:underline;text-underline-offset:3px}.surface{background:var(--paper);border:1px solid var(--rule);border-radius:9px;overflow:hidden}.catalog{border-collapse:collapse;width:100%;table-layout:fixed;text-align:left}.catalog .no-col{width:4.35rem}.catalog .cat-col{width:32%}.catalog .num-col{width:6.1rem}.catalog th,.catalog td{border-bottom:1px solid var(--rule);padding:10px 12px;text-align:left;vertical-align:middle;overflow-wrap:anywhere}.catalog thead th{font-size:12px;font-weight:650;color:var(--muted);background:#f3f6f9;line-height:1.35}.catalog tbody tr:last-child>td,.catalog tbody tr:last-child>th{border-bottom:0}.group-row:hover{background:var(--hover)}.group-row.is-open{background:var(--brand-pale)}.group-row .row-num{font:600 13px var(--mono);color:var(--brand)}.count{font-size:12px;white-space:nowrap;color:var(--muted)}.blurb{font-size:13px;color:var(--muted)}.toggle{display:inline-flex;align-items:center;gap:7px;min-height:30px;text-align:left;border:0;background:transparent;color:var(--ink);padding:0;font-weight:650}.toggle::before{content:"";flex:none;width:6px;height:6px;margin-right:1px;border:solid var(--brand);border-width:0 1.5px 1.5px 0;transform:rotate(-45deg);transition:transform .15s ease}.toggle[aria-expanded="true"]::before{transform:rotate(45deg) translate(-1px,-1px)}.content-row>td{padding:0 0 0 11px;background:var(--paper);border-left:3px solid var(--brand);vertical-align:top}.subcatalog .no-col{width:4rem}.subcatalog .cat-col{width:34%}.subcatalog .num-col{width:5.5rem}.subcatalog thead th{background:#f8fafc}.subcatalog .content-row>td{padding-left:4px;border-left:0}.skills .skill-no{width:3.9rem}.skills .skill-name{width:39%}.skills .skill-source{width:7rem}.skills th,.skills td{padding-block:8px}.skills thead th{background:var(--paper)}.table-code{font-size:12px;color:var(--ink);font-weight:650;overflow-wrap:anywhere}.source{font-size:11px;color:var(--muted);display:inline-block}.source.personal{color:var(--mark);background:var(--mark-pale);border-radius:3px;padding:1px 5px}.skill-info{font-size:13px}.skill-info details{margin:0}.skill-info summary{cursor:pointer;list-style:none;font-weight:400}.skill-info summary::-webkit-details-marker{display:none}.detail-label{font-size:12px;text-decoration:underline;text-underline-offset:3px;color:var(--brand);margin-right:6px}.skill-info details[open] .detail-label{font-weight:650}.skill-info p{margin:6px 0 4px;color:var(--muted)}.skill-info .skill-path{font:11px/1.45 var(--mono);display:block;overflow-wrap:anywhere;margin:5px 0 8px;color:var(--muted)}.skill-info .open-source{font-size:12px}.empty{text-align:center;padding:25px;color:var(--muted)}.foot{padding:11px 0;color:var(--muted);font-size:12px}.focus-pulse{outline:2px solid var(--brand);outline-offset:-2px}.no-js{padding:15px}
+@media(max-width:1000px){.workspace{grid-template-columns:170px minmax(0,1fr);gap:16px}.top-inner,.layout{width:calc(100% - 40px)}.rail button{font-size:12px}.catalog th,.catalog td{padding-inline:9px}}
+@media(max-width:780px){.workspace{display:block}.rail{position:static;margin-bottom:14px}.rail h2{margin-bottom:3px;padding-left:0}.rail ol{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:4px}.rail button{display:block;text-align:center;padding:4px;border:1px solid var(--rule);min-height:36px}.rail .index-name{display:none}.top-inner,.layout{width:calc(100% - 28px)}.intro{padding-top:27px}.status{flex-wrap:wrap}}
+@media(max-width:530px){body{font-size:14px}.intro{display:block}.updated{text-align:left;margin-top:10px}.searchbar{grid-template-columns:1fr 1fr}.input-wrap{grid-column:1/-1}.control{min-height:37px}.catalog .no-col{width:2.6rem}.catalog .cat-col{width:37%}.catalog .num-col{width:3.7rem}.catalog th,.catalog td{padding:7px 5px}.catalog .row-num,.count{font-size:11px}.toggle{min-height:36px;gap:5px;font-size:13px}.blurb{font-size:11px}.content-row>td{padding-left:3px}.subcatalog .no-col{width:2.7rem}.subcatalog .cat-col{width:40%}.subcatalog .num-col{width:3.4rem}.skills .skill-no{width:2.1rem}.skills .skill-name{width:30%}.skills .skill-source{width:3.4rem}.table-code,.skill-info{font-size:11px}.detail-label{font-size:11px;margin-right:3px}.source.personal{padding:1px 2px}.catalog thead th{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner"><div class="wordmark"><span class="token" aria-hidden="true">[ ]</span>SKILL CATALOG</div><div class="local">本机目录 · 离线可用</div></div></header>
+<main class="layout">
+  <header class="intro"><div><p class="kicker">个人工作台 / 目录</p><h1>Skill 分类目录</h1><p>按用途查找本机 Skills，点开分类再看明细。</p></div><div class="updated" id="inventory"></div></header>
+  <div class="workspace">
+    <nav class="rail" aria-label="一级分类索引"><h2>分类索引</h2><ol id="catalog-index"></ol></nav>
+    <section class="catalog-panel" aria-label="Skill 清单">
+      <form class="searchbar" id="catalog-search" role="search">
+        <div class="input-wrap"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.2"/><path d="m15.5 15.5 4.2 4.2"/></svg><input id="catalog-query" type="search" autocomplete="off" aria-label="搜索 Skill 或输入分类编号" placeholder="搜索 Skill、用途，或输入 4.3 跳转"></div>
+        <button type="button" id="expand-all" class="control">展开全部</button><button type="button" id="collapse-all" class="control">收起全部</button>
+      </form>
+      <div class="status"><span id="catalog-status" role="status" aria-live="polite"></span><button type="button" id="clear-query" class="text-action" hidden>清除搜索</button></div>
+      <div class="surface"><table class="catalog" aria-label="一级分类"><colgroup><col class="no-col"><col class="cat-col"><col class="num-col"><col></colgroup><thead><tr><th scope="col">编号</th><th scope="col">一级分类</th><th scope="col">Skills</th><th scope="col">简单描述</th></tr></thead><tbody id="catalog-rows"></tbody></table><noscript><p class="no-js">请在浏览器中启用 JavaScript，再打开目录。</p></noscript></div>
+      <footer class="foot">「我自己做的」是快捷入口，同一 Skill 不重复计入总数。点击「详情」在表格内展开说明。</footer>
+    </section>
+  </div>
+</main>
+<script id="catalog-data" type="application/json">[]</script>
+<script>
+(() => {
+  "use strict";
+  const categories = [
+    ['1','我自己做的','自制 Skill 快捷入口'],
+    ['2','图片制作与编辑','生成、编辑图片及制作素材'],
+    ['3','UI 界面设计与还原','界面设计、改版和截图还原'],
+    ['4','MATLAB / Simulink','编程、仿真、控制、分析与部署'],
+    ['5','科研写作与论文审稿','论文翻译、润色与审查'],
+    ['6','科研绘图与实验结果展示','仿真曲线和参数迭代图'],
+    ['7','Word、PDF 与作业文档','文档创建、编辑与转换'],
+    ['8','Excel 与表格处理','工作簿处理和实时 Excel 操作'],
+    ['9','PPT 制作、模板与还原','演示文稿、模板及可编辑重建'],
+    ['10','视频与动画制作','手绘故事视频与动画'],
+    ['11','语音、配音与音频','配音、录放音与流式处理'],
+    ['12','网站搭建与发布','新建、改版与发布网站'],
+    ['13','联网检索与资料查找','搜索公开网页和平台资料'],
+    ['14','浏览器与电脑操作','操作浏览器、桌面与应用'],
+    ['15','交互式图解与可视化','制作可操作的图解和小模拟'],
+    ['16','知识页面与定时任务','整理空间、撰写页面及维护计划'],
+    ['17','Codex、Skills 与插件工具','查文档、发现和安装扩展'],
+    ['18','创意互动与数字宠物','创建、更新和管理数字宠物']
+  ];
+  const subgroups = {
+    '1': [
+      ['1.1','FZC 控制实验流程','从需求整理、选型到迭代调参'],
+      ['1.2','科研绘图','输出仿真曲线与迭代分布图'],
+      ['1.3','个人提示词目录','按编号浏览与调用工作流'],
+      ['1.4','科研写作','翻译、润色与审稿'],
+      ['1.5','其他自制','用户指定的其他自制 Skills']
+    ],
+    '4': [
+      ['4.1','MATLAB 编程与数值计算','脚本、调试、符号计算与数值求解'],
+      ['4.2','系统架构、建模与仿真','架构、模型、输入与仿真'],
+      ['4.3','控制算法与参数优化','控制器选型、调参、辨识与线性化'],
+      ['4.4','信号、数据与音频处理','频谱、时频、滤波与音频'],
+      ['4.5','测试、合规与故障分析','模型检查、覆盖率与故障注入'],
+      ['4.6','代码生成与嵌入式部署','嵌入式代码生成、优化与集成'],
+      ['4.7','行业专项应用','无人机、机器人、导航、电池与机械'],
+      ['4.8','项目、示例与环境管理','项目、示例、文档与工具箱']
+    ]
+  };
+  const personalGroups = {};
+  const personalOrder = Object.keys(personalGroups);
+  const audioExtras = new Set();
+  const entries = JSON.parse(document.getElementById('catalog-data').textContent);
+  const opened = new Set();
+  const view = new Map();
+  const body = document.getElementById('catalog-rows');
+  const index = document.getElementById('catalog-index');
+  const query = document.getElementById('catalog-query');
+  const status = document.getElementById('catalog-status');
+  const clear = document.getElementById('clear-query');
+  let beforeSearch = null;
+  let active = null;
+  const make = (tag, cls, str) => {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (str != null) node.textContent = str;
+    return node;
+  };
+  function colgroup(classes) {
+    const group = make('colgroup');
+    classes.forEach(cls => group.append(make('col', cls)));
+    return group;
+  }
+  function tableHeader(labels) {
+    const head = make('thead');
+    const row = make('tr');
+    labels.forEach(label => { const node = make('th', '', label); node.scope = 'col'; row.append(node); });
+    head.append(row);
+    return head;
+  }
+  function localURL(path) {
+    const parts = path.replaceAll('\\','/').split('/');
+    if (!/^[A-Za-z]:$/.test(parts[0])) return null;
+    return 'file:///' + parts[0] + '/' + parts.slice(1).map(encodeURIComponent).join('/');
+  }
+  function drawSkills(list) {
+    if (!list.length) return make('p','empty','这个分类暂无 Skill。');
+    const table = make('table','catalog skills');
+    table.setAttribute('aria-label','Skill 明细');
+    table.append(colgroup(['skill-no','skill-name','skill-source','']), tableHeader(['编号','Skills','来源','简单描述']));
+    const target = make('tbody');
+    list.forEach((item, i) => {
+      const tr = make('tr');
+      const label = make('th','',''); label.scope = 'row'; label.append(make('code','table-code',item.name));
+      const source = make('td'); source.append(make('span','source' + (item.personal ? ' personal' : ''),item.source));
+      const info = make('td','skill-info');
+      const d = make('details');
+      const s = make('summary');
+      s.setAttribute('aria-label','详情：' + item.name + '，' + item.summary);
+      s.append(make('span','detail-label','详情'),document.createTextNode(item.summary));
+      d.append(s,make('p','',item.detail || item.summary),make('span','skill-path',item.path.replaceAll('/','\\')));
+      const url = localURL(item.path);
+      if (url) { const a = make('a','open-source','打开 SKILL.md ↗'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; d.append(a); }
+      info.append(d);
+      tr.append(make('td','row-num',i + 1),label,source,info);
+      target.append(tr);
+    });
+    table.append(target);
+    return table;
+  }
+  function inCategory(id) {
+    if (id === '1') return [...personalOrder.map(name => entries.find(item => item.name === name)).filter(Boolean), ...entries.filter(item => item.personal && !personalOrder.includes(item.name))];
+    return entries.filter(item => item.category === id || (id === '11' && audioExtras.has(item.name)));
+  }
+  function matching(text, item) {
+    const group = categories.find(cat => cat[0] === item.category);
+    const sub = subgroups[item.category]?.find(row => row[0] === item.subcategory);
+    const haystack = [item.name, item.summary, item.detail, item.source, group?.[1], sub?.[1], item.personal ? '我自己做的 自制' : ''].join(' ').toLowerCase();
+    return text.toLowerCase().split(/\s+/).every(word => haystack.includes(word));
+  }
+  function toggle(id, value) {
+    if (value) opened.add(id); else opened.delete(id);
+    const handle = view.get(id);
+    if (handle) {
+      if (value && !handle.built) { handle.cell.append(handle.build()); handle.built = true; }
+      handle.row.classList.toggle('is-open',value);
+      handle.panel.hidden = !value;
+      handle.button.setAttribute('aria-expanded',String(value));
+    }
+  }
+  function groupRow(target, [id, name, blurb], list, build, autoOpen) {
+    const row = make('tr','group-row'); row.id = 'category-' + id;
+    const nameCell = make('th'); nameCell.scope = 'row';
+    const button = make('button','toggle',name); button.type = 'button';
+    button.setAttribute('aria-controls','panel-' + id);
+    button.addEventListener('click',() => toggle(id,button.getAttribute('aria-expanded') !== 'true'));
+    nameCell.append(button);
+    row.append(make('td','row-num',id),nameCell,make('td','count',list.length + ' 项'),make('td','blurb',blurb));
+    const panel = make('tr','content-row'); panel.id = 'panel-' + id;
+    const cell = make('td'); cell.colSpan = 4; panel.append(cell);
+    target.append(row,panel);
+    view.set(id,{row,button,panel,cell,build,built:false});
+    const wasOpen = opened.has(id);
+    toggle(id,wasOpen || autoOpen);
+  }
+  function drawChildren(id, list, searching) {
+    if (!subgroups[id]) return drawSkills(list);
+    const table = make('table','catalog subcatalog');
+    table.setAttribute('aria-label','二级分类');
+    table.append(colgroup(['no-col','cat-col','num-col','']),tableHeader(['编号','二级分类','Skills','简单描述']));
+    const target = make('tbody');
+    subgroups[id].forEach(group => {
+      const included = list.filter(item => (id === '1' ? item.personalSubcategory || personalGroups[item.name] || '1.5' : item.subcategory) === group[0]);
+      if (included.length || (!searching && group[0] !== '1.5')) groupRow(target,group,included,() => drawSkills(included),searching);
+    });
+    table.append(target);
+    return table;
+  }
+  function render() {
+    view.clear(); body.replaceChildren();
+    const text = query.value.trim();
+    const searching = Boolean(text);
+    const found = new Set();
+    let visibleGroups = 0;
+    categories.forEach(category => {
+      const [id,name,description] = category;
+      const bucket = inCategory(id);
+      const allMatch = searching && [name,description].join(' ').toLowerCase().includes(text.toLowerCase());
+      const shown = searching && !allMatch ? bucket.filter(item => matching(text,item)) : bucket;
+      if (searching && !shown.length) return;
+      visibleGroups++;
+      shown.forEach(item => found.add(item.name));
+      groupRow(body,category,shown,() => drawChildren(id,shown,searching),searching);
+    });
+    if (!visibleGroups) { const row = make('tr'); const cell = make('td','empty','没有匹配的 Skill，试试「绘图」「控制」或英文名称。'); cell.colSpan = 4; row.append(cell); body.append(row); }
+    status.textContent = searching ? '匹配 ' + found.size + ' 个 Skills · ' + visibleGroups + ' 个分类' : categories.length + ' 个一级分类 · ' + entries.length + ' 个 Skills';
+    clear.hidden = !searching;
+  }
+  function setQuery(value) {
+    query.value = value;
+    const hasText = Boolean(value.trim());
+    if (hasText && !beforeSearch) beforeSearch = new Set(opened);
+    if (!hasText && beforeSearch) { opened.clear(); beforeSearch.forEach(id => opened.add(id)); beforeSearch = null; }
+    render();
+  }
+  function jump(id) {
+    const top = id.split('.')[0];
+    if (!categories.some(item => item[0] === top) || (id !== top && !subgroups[top]?.some(item => item[0] === id))) return false;
+    if (query.value) setQuery('');
+    toggle(top,true);
+    if (id !== top) toggle(id,true);
+    const handle = view.get(id);
+    if (handle) {
+      handle.button.focus({preventScroll:true});
+      handle.row.scrollIntoView({block:'nearest'});
+      handle.row.classList.add('focus-pulse');
+      window.setTimeout(() => handle.row.classList.remove('focus-pulse'),700);
+    }
+    active?.removeAttribute('aria-current');
+    active = index.querySelector('[data-category="' + top + '"]');
+    active?.setAttribute('aria-current','true');
+    return true;
+  }
+  categories.forEach(([id,name]) => {
+    const li = make('li'); const btn = make('button'); btn.type = 'button'; btn.dataset.category = id;
+    btn.setAttribute('aria-label',id + ' ' + name); btn.append(make('span','index-no',id),make('span','index-name',name));
+    btn.addEventListener('click',() => jump(id)); li.append(btn); index.append(li);
+  });
+  document.getElementById('inventory').textContent = '清单快照 · 2026-11-08';
+  document.getElementById('catalog-search').addEventListener('submit',event => {
+    event.preventDefault();
+    const text = query.value.trim();
+    if (!/^\d+(?:\.\d+)?$/.test(text) || !jump(text)) setQuery(text);
+  });
+  query.addEventListener('input',() => {
+    const value = query.value.trim();
+    if (!/^\d+(?:\.\d*)?$/.test(value)) setQuery(query.value);
+    else status.textContent = '按 Enter 跳转至分类 ' + value;
+  });
+  clear.addEventListener('click',() => { setQuery(''); query.focus(); });
+  document.getElementById('expand-all').addEventListener('click',() => {
+    categories.forEach(([id]) => {
+      if (!view.has(id)) return;
+      toggle(id,true);
+      subgroups[id]?.forEach(([child]) => { if (view.has(child)) toggle(child,true); });
+    });
+  });
+  document.getElementById('collapse-all').addEventListener('click',() => {
+    Array.from(opened).forEach(id => toggle(id,false));
+    if (beforeSearch) beforeSearch.clear();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
