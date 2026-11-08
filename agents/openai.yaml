@@ -1,0 +1,3 @@
+interface:
+  display_name: "Skill 分类目录"
+  short_description: "打开本地技能分类目录，支持安装后自动收录和按需刷新完整目录"
